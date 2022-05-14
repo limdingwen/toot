@@ -1,7 +1,9 @@
 coverage
+faker
 keyring
 psycopg2-binary
 pytest
+pytest-asyncio
 pytest-xdist[psutil]
 pyxdg
 pyyaml
