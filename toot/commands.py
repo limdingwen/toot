@@ -369,8 +369,3 @@ def notifications(app, user, args):
 def tui(app, user, args):
     from .tui.app import TUI
     TUI.create(app, user).run()
-
-
-def async_tui(app, user, args):
-    from .tui.asyncio_app import Toot
-    Toot(user, app).run()
