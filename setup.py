@@ -47,7 +47,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'toot=toot.asynch.commands:main',
+            'toot=toot.asynch.commands:cli',
         ],
     }
 )

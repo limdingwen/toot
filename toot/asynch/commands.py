@@ -26,7 +26,7 @@ CONTEXT = dict(
 
 
 def validate_language(ctx, param, value: str) -> str:
-    if len(value) != 3:
+    if value and len(value) != 3:
         raise click.BadParameter(
             "Expected a 3 letter abbreviation according to ISO 639-2 standard."
         )
@@ -60,22 +60,22 @@ def instance(hostname: str):
     is_flag=True,
     flag_value=os.environ.get("EDITOR"),
     show_default=os.environ.get("EDITOR"),
-    help="Use an editor to compose your toot, defaults to editor defined in "
-         "$EDITOR environment variable."
+    help="""Use an editor to compose your toot, defaults to editor defined in
+            the $EDITOR environment variable."""
 )
 @click.option(
     "-m",
     "--media",
     multiple=True,
-    help="Path to a media file to attach (specify multiple times to attach "
-         "up to 4 files)",
+    help="""Path to a media file to attach (specify multiple times to attach up
+            to 4 files)""",
 )
 @click.option(
     "-d",
     "--description",
     multiple=True,
-    help="Plain-text description of the media for accessibility purposes, one "
-         "per attached media",
+    help="""Plain-text description of the media for accessibility purposes, one
+            per attached media""",
 )
 @click.option(
     "-l",
